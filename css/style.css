@@ -37,10 +37,6 @@
     right: 40px;
 }
 
-.on-img-title > h3.active {
-    opacity: 1;
-}
-
 .on-img-text {
     height: 40%;
     width: 80%;
@@ -58,10 +54,6 @@
     position: absolute;
     bottom: 0;
     right: 40px;
-}
-
-.on-img-text > p.active {
-    opacity: 1;
 }
 
 .sidebar {

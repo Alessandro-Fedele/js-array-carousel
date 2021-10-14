@@ -34,10 +34,12 @@ let currentIndex = 0;
 
 // Cicli
 // ciclo per immagini
-for (let i = 0; i < items.length; i++) {
-
+for (let i = 0, k = 0, j = 0; i < items.length, k < title.length, j < text.length; i++, k++, j++) {
+    console.log(i, j, k);
     // ogni ciclo prendo un imagine
     const urlCurrentImg = items[i];
+    const currentTitle = title[k];
+    const currentText = text[j];
 
     // Creo una classe per l'active
     let activeClass = "";
@@ -47,29 +49,16 @@ for (let i = 0; i < items.length; i++) {
         activeClass = "active";
     }
 
+
     // Creo i tag img
     const tagImg = `<img class="${activeClass}" src="${urlCurrentImg}" alt="immagine ${i}">`;
+    const onImgTitle = `<h3>${currentTitle}</h3>`;
+    const onImgText = `<p>${currentText}</p>`;
 
     // aggiungo all'Html
-    imgContainer.innerHTML += tagImg;
-
-    for (let k = 0; k < title.length; k++) {
-        // ogni ciclo prendo un titolo
-        const currentTitle = title[k];
-
-        // Active per il titolo
-        let activeTitle = "";
-
-        // Il primo titolo è visibile
-        if (k === currentIndex) {
-            activeTitle = "active";
-        }
-
-        // creo i title in on-img-title
-        onImgTitle.innerHTML += `<h3 class="${activeTitle}">${currentTitle}</h3>`;
-    }
+    // imgContainer.classList.add("active");
+    imgContainer.innerHTML += tagImg + onImgTitle + onImgText;
 }
-
 //-------------------------
 // Arrow
 const arrowDown = document.querySelector(".arrow-down");
@@ -115,37 +104,3 @@ arrowDown.addEventListener("click", function ()
     const nowActiveImg = imgTags[currentIndex];
     nowActiveImg.classList.add("active");
 });
-
-
-// for (let k = 0; k < title.length; k++) {
-    //     // ogni ciclo prendo un titolo
-    //     const currentTitle = title[k];
-
-    //     // Active per il titolo
-    //     let activeTitle = "";
-
-    //     // Il primo titolo è visibile
-    //     if (k === currentIndex) {
-    //         activeTitle = "active";
-    //     }
-
-    //     // creo i title in on-img-title
-    //     onImgTitle.innerHTML += `<h3 class="${activeTitle}">${currentTitle}</h3>`;
-    // }
-
-
-// for (let j = 0; j < text.length; j++) {
-    //     // ogni ciclo prendo un testo
-    //     const currentText = text[j];
-
-    //     // Active per il titolo
-    //     let activeText = "";
-
-    //     // Il primo titolo è visibile
-    //     if (j === currentIndex) {
-    //         activeText = "active";
-    //     }
-
-    //     // creo i title in on-img-title
-    //     onImgText.innerHTML += `<p class="${activeText}">${currentText}</p>`;
-    // }
