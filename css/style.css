@@ -1,0 +1,125 @@
+.img-container {
+    width: 100%;
+    height: 60vh;
+    position: relative;
+}
+
+.img-container > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.img-container > img.active {
+    opacity: 1;
+}
+
+.on-img-title {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    text-align: end;
+}
+
+.on-img-title > h3 {
+    
+    opacity: 0;
+    transition: opacity 0.3s;
+    color: white;
+    position: absolute;
+    bottom: 90px;
+    right: 40px;
+}
+
+.on-img-title > h3.active {
+    opacity: 1;
+}
+
+.on-img-text {
+    height: 40%;
+    width: 80%;
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    right: 0;
+    text-align: end;
+}
+
+.on-img-text > p {
+    opacity: 0;
+    transition: opacity 0.3s;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: 40px;
+}
+
+.on-img-text > p.active {
+    opacity: 1;
+}
+
+.sidebar {
+    width: 100%;
+    height: 60vh;
+    position: relative;
+}
+
+.arrows-container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.arrows-container i {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(231, 230, 230, 0.534);
+    padding: 12px;
+}
+
+.arrow > i:hover {
+    color: rgba(41, 41, 41, 0.664);
+    background-color: whitesmoke;
+}
+
+.sidebar-img-container {
+    height: 100%;
+}
+
+.thumbnail {
+    height: 20%;
+    position: relative;
+}
+
+.thumbnail > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.267);
+}
+
+.overlay.active {
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid white;
+}
