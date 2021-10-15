@@ -15,45 +15,36 @@
     transition: opacity 0.3s;
 }
 
-.img-container > img.active {
-    opacity: 1;
-}
-
-.on-img-title {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 2;
-    text-align: end;
-}
-
-.on-img-title > h3 {
-    
+.img-container > h3 {
     opacity: 0;
     transition: opacity 0.3s;
     color: white;
     position: absolute;
     bottom: 90px;
     right: 40px;
+    z-index: 2;
 }
 
-.on-img-text {
-    height: 40%;
-    width: 80%;
-    position: absolute;
-    z-index: 3;
-    bottom: 0;
-    right: 0;
-    text-align: end;
+.img-container > h3.active {
+    opacity: 1;
 }
 
-.on-img-text > p {
+.img-container > img.active {
+    opacity: 1;
+}
+
+.img-container > p {
     opacity: 0;
     transition: opacity 0.3s;
     color: white;
     position: absolute;
     bottom: 0;
     right: 40px;
+    z-index: 3;
+}
+
+.img-container > p.active {
+    opacity: 1;
 }
 
 .sidebar {
@@ -100,18 +91,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(.5);
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.267);
-}
-
-.overlay.active {
-    background-color: rgba(0, 0, 0, 0);
-    border: 2px solid white;
+.thumbnail > img.active {
+    border: 3px solid white;
+    filter: brightness(1);
 }
