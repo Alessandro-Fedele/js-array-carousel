@@ -41,6 +41,7 @@
     bottom: 0;
     right: 40px;
     z-index: 3;
+    text-align: end;
 }
 
 .img-container > p.active {

@@ -26,15 +26,10 @@ const text = [
 // immagini
 const imgContainer = document.querySelector(".img-container");
 const thumbContainer = document.querySelector(".thumbnail");
-// // titoli
-// const onImgTitle = document.querySelector(".on-img-title");
-// // testi
-// const onImgText = document.querySelector(".on-img-text");
 
 let currentIndex = 0;
 
-// Cicli
-// ciclo per immagini
+// Ciclo per immagini
 for (let i = 0, k = 0, j = 0; i < items.length, k < title.length, j < text.length; i++, k++, j++) {
     console.log(i, j, k);
     // ogni ciclo prendo un imagine
@@ -52,15 +47,17 @@ for (let i = 0, k = 0, j = 0; i < items.length, k < title.length, j < text.lengt
 
     // Creo i tag img
     const tagImg = `<img class="${activeClass}" src="${urlCurrentImg}" alt="immagine ${i}">`;
-    const onImgTitle = `<h3>${currentTitle}</h3>`;
-    const onImgText = `<p>${currentText}</p>`;
+    const onImgTitle = `<h3 class="${activeClass}">${currentTitle}</h3>`;
+    const onImgText = `<p class="${activeClass}">${currentText}</p>`;
+
+    console.log(onImgTitle, onImgText);
 
     // aggiungo all'Html
     // imgContainer.classList.add("active");
     imgContainer.innerHTML += tagImg + onImgTitle + onImgText;
     thumbContainer.innerHTML += tagImg;
-
 }
+
 //-------------------------
 // Arrow
 const arrowDown = document.querySelector(".arrow-down");
@@ -72,9 +69,13 @@ arrowUp.addEventListener("click", function ()
 {
     // Prendo la classe attiva e ci rimuovo la classe che la rende attiva
     const activeImg = imgContainer.querySelector(".active");
+    const activeTitle = imgContainer.querySelector("h3.active");
+    const activeText = imgContainer.querySelector("p.active");
     const activeThumb = thumbContainer.querySelector(".active");
     activeImg.classList.remove("active");
     activeThumb.classList.remove("active");
+    activeTitle.classList.remove("active");
+    activeText.classList.remove("active");
 
     // Decremento counter
     currentIndex--;
@@ -85,21 +86,31 @@ arrowUp.addEventListener("click", function ()
     }
 
     const imgTags = imgContainer.querySelectorAll("img");
+    const textTags = imgContainer.querySelectorAll("p");
+    const titleTags = imgContainer.querySelectorAll("h3");
     const activeON = thumbContainer.querySelectorAll("img");
     const nowActiveImg = imgTags[currentIndex];
     const nowActiveThumb = activeON[currentIndex];
+    const nowActiveTitle = titleTags[currentIndex];
+    const nowActiveText = textTags[currentIndex];
 
     nowActiveImg.classList.add("active");
     nowActiveThumb.classList.add("active");
+    nowActiveTitle.classList.add("active");
+    nowActiveText.classList.add("active");
 });
 
 // Freccia Up
 arrowDown.addEventListener("click", function ()
 {
-    const activeImg = imgContainer.querySelector(".active");
+    const activeImg = imgContainer.querySelector("img.active");
+    const activeTitle = imgContainer.querySelector("h3.active");
+    const activeText = imgContainer.querySelector("p.active");
     const activeThumb = thumbContainer.querySelector(".active");
     activeImg.classList.remove("active");
     activeThumb.classList.remove("active");
+    activeTitle.classList.remove("active");
+    activeText.classList.remove("active");
 
     // Incremento counter
     currentIndex++;
@@ -110,10 +121,16 @@ arrowDown.addEventListener("click", function ()
     }
 
     const imgTags = imgContainer.querySelectorAll("img");
+    const textTags = imgContainer.querySelectorAll("p");
+    const titleTags = imgContainer.querySelectorAll("h3");
     const activeON = thumbContainer.querySelectorAll("img");
     const nowActiveImg = imgTags[currentIndex];
     const nowActiveThumb = activeON[currentIndex];
+    const nowActiveTitle = titleTags[currentIndex];
+    const nowActiveText = textTags[currentIndex];
 
     nowActiveImg.classList.add("active");
     nowActiveThumb.classList.add("active");
+    nowActiveTitle.classList.add("active");
+    nowActiveText.classList.add("active");
 });
